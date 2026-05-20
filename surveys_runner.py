@@ -97,6 +97,8 @@ class LLMClient:
                     max_new_tokens=50,
                     eos_token_id=terminators,
                     do_sample=True,
+                    temperature=0.7,
+                    top_p=1.0,
                     pad_token_id=self.pipe.tokenizer.eos_token_id  # avoid pad warning
                 )
                 for message in outputs[0]["generated_text"]:
